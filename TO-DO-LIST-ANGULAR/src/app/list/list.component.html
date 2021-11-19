@@ -1,0 +1,41 @@
+<div class="app-container d-flex align-items-center justify-content-center flex-column" style="background-color: antiquewhite;">
+<h3>My Todo App</h3>
+<form [formGroup]="frmList" (ngSubmit)="onSubmit(frmList.value)">
+    <div class="d-flex align-items-center mb-3">
+      <div class="form-group mr-3 mb-0">
+        <input   type="text" class="form-control" placeholder="Enter a task here" [formControlName]="'listData'" [(ngModel)]="listData"/>
+      </div>
+      <button type="submit" class="btn btn-primary mr-3" *ngIf="!_id">Save</button>
+      <button type="submit" class="btn btn-primary mr-3" *ngIf="_id">Update</button>
+    </div>
+</form>
+your name
+<div class="table-wrapper">
+  <table class="table table-hover table-bordered">
+    <thead>
+      <tr>
+        <th>No.</th>
+        <th>Todo item</th>
+        <th>Created on</th>
+        <th>status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let _list of arrayList ,let i=index" [attr.data-index]="i" >
+        <td>{{i+1}}</td>
+        <td>{{_list.list_name}}</td>
+        <td>{{_list.created_on}}</td>
+        <td>
+          <span class="btn btn-success" *ngIf="_list.list_status"(click)="updateStatus(false,_list._id)">Completed</span>
+          <span class="btn btn-danger" *ngIf="!_list.list_status" (click)="updateStatus(true,_list._id)">inComplete</span>
+        </td>
+        <td>
+          <button class="btn btn-success" (click)="onEdit(_list._id)">EDIT</button>
+          <button class="btn btn-danger" (click)="onDelete(_list._id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
