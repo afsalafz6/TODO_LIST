@@ -1,4 +1,4 @@
-## FRONT END RUNNING ########################################################
+## HOW TO RUN FRONT END ANGULAR ########################################################
 
 # TODOLISTANGULAR
 
@@ -28,13 +28,14 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 
 ## ##############################################################################
-## BACK END Readme #############################################################
+## HOW TO RUN BACK END NODEJS #############################################################
 ## ##############################################################################
 
 # Project Title
 
 MY TODO APP
 
+Run using this command `npm start`  or `npm app.js` 
 ---
 ## Requirements
 
