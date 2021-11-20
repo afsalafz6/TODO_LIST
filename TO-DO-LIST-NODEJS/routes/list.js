@@ -4,13 +4,14 @@ var listHelper = require('../HELPER/listHelper');
 
 router.post('/create', async (req, res) => {
     let body = req.body;
-    console.log('body',body);
+    console.log('body in create',body);
     let listResponse = await listHelper.createlist(body);
     res.json(listResponse);
 });
 
 router.post('/list', async (req, res, next) => {
     let body = req.body;
+    console.log('body in list',body);
     let listList = await listHelper.getListData(body);
     res.json(listList);
 });
@@ -18,6 +19,7 @@ router.post('/list', async (req, res, next) => {
 router.put('/updateStatus/:id', async (req, res, next) => {
     let body = req.body;
     body.listId = req.params.id;
+    console.log('body in update',body);
     let updateStatus = await listHelper.updateStatus(body);
     res.json(updateStatus);
 });
@@ -25,6 +27,7 @@ router.put('/updateStatus/:id', async (req, res, next) => {
 router.delete("/delete/:id", async (req, res) => {
     let body = req.body;
     body.listId = req.params.id;
+    console.log('body in delete',body);
     let deleteList = await listHelper.deleteList(body);
     res.json(deleteList);
 });
