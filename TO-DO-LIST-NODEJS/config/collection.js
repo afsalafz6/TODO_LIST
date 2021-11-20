@@ -1,4 +1,4 @@
 module.exports = {
-    dbString: 'mongodb://localhost:27017/TODOLIST',
+    dbString: 'mongodb+srv://admin:admin@todolist.amiyf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
     LIST: 'list'
 }

@@ -52,7 +52,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-db.connect(dbConfig.dbString,(err) =>{
+db.connected(dbConfig.dbString,(err) =>{
   if(err) {
     console.log('Unable to connect to db Signalling');
     process.exit(1)
